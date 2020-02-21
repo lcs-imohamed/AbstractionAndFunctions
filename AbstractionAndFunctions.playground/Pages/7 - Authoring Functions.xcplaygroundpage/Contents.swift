@@ -27,6 +27,13 @@ import Foundation
  */
 // Begin your work here...
 
+//Define a function to calculate the area of a parellelogram
+func areaOfParallelogram(Base: Double, Height: Double) -> Double {
+    return Base * Height
+}
+
+//Invoke function to calculate area
+let parellelogramArea = areaOfParallelogram(Base: 2, Height: 6)
 
 
 /*:
