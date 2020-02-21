@@ -36,6 +36,13 @@ func areaOfParallelogram(Base: Double, Height: Double) -> Double {
 let parellelogramArea = areaOfParallelogram(Base: 2, Height: 6)
 
 
+//Define a function to calculate the area of a triangle
+func areaOfTriangle(Base: Double, Height: Double) -> Double {
+    return Base * Height / 2
+}
+
+//Invoke function calculate area
+let triangleArea = areaOfTriangle(Base: 1, Height: 2)
 /*:
  [Previous: Writing Documentation](@previous) | Page 7
  */
