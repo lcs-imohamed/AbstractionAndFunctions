@@ -43,6 +43,15 @@ func areaOfTriangle(Base: Double, Height: Double) -> Double {
 
 //Invoke function calculate area
 let triangleArea = areaOfTriangle(Base: 1, Height: 2)
+
+//Define a function to calculate the perimeter of a rectangle
+func perimeterOfRectangle(Length: Double, Width: Double) -> Double {
+    return 2 * Length + 2 * Width
+}
+
+//Invoke function to calculate rectangle perimeter
+ let rectanglePerimeter = perimeterOfRectangle(Length: 1, Width: 1)
 /*:
  [Previous: Writing Documentation](@previous) | Page 7
  */
+
