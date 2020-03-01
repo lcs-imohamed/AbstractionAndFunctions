@@ -50,7 +50,7 @@ func perimeterOfRectangle(Length: Double, Width: Double) -> Double {
 }
 
 //Invoke function to calculate rectangle perimeter
- let rectanglePerimeter = perimeterOfRectangle(Length: 1, Width: 1)
+let rectanglePerimeter = perimeterOfRectangle(Length: 1, Width: 1)
 
 //Define a function to calculate the circumference of a circle
 func circumferenceOfCircle(Radius: Double) -> Double
@@ -68,7 +68,7 @@ func surfaceAreaOfCone(Radius: Double, Side: Double) -> Double {
     //Create constant for area of lateral surface
     let areaOfLateralSurface = Double.pi * Radius * Side
     
-   return areaOfBase + areaOfLateralSurface
+    return areaOfBase + areaOfLateralSurface
 }
 
 //Invoke function to calculate surface area of cone
@@ -82,7 +82,15 @@ func surfaceAreaOfSphere(Radius: Double) -> Double {
 //Invoke function to calculate surface area of sphere
 let sphereSurfaceArea = surfaceAreaOfSphere(Radius: 2)
 
+//Define function to calculate the volume of a square based pyramid
+func volumeOfPyramid(Base: Double, Height: Double) -> Double {
+    //Create constant for area of base
+    let areaOfBase = pow(Base, 2.0)
+    return 1/3 * areaOfBase * Height
+}
 
+//Invoke function to calculate the volume of a pyramid
+let pyramidVolume = volumeOfPyramid(Base: 2, Height: 2)
 /*:
  [Previous: Writing Documentation](@previous) | Page 7
  */
