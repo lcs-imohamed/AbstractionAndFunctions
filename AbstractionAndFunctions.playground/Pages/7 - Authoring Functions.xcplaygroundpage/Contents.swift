@@ -27,14 +27,14 @@ import Foundation
  */
 // Begin your work here...
 
-//Define a function to calculate the area of a parellelogram
-func areaOfParallelogram(Base: Double, Height: Double) -> Double {
-    return Base * Height
+
+//Define a function to calculate the area of a circle
+func areaOfCircle(Radius: Double) -> Double {
+    return Double.pi * pow(Radius, 2.0)
 }
 
-//Invoke function to calculate area
-let parellelogramArea = areaOfParallelogram(Base: 2, Height: 6)
-
+//Invoke function to calculate area of circle
+let circleArea = areaOfCircle(Radius: 1)
 
 //Define a function to calculate the area of a triangle
 func areaOfTriangle(Base: Double, Height: Double) -> Double {
@@ -51,6 +51,17 @@ func perimeterOfRectangle(Length: Double, Width: Double) -> Double {
 
 //Invoke function to calculate rectangle perimeter
  let rectanglePerimeter = perimeterOfRectangle(Length: 1, Width: 1)
+
+//Define a function to calculate the circumference of a circle
+func circumferenceOfCircle(Radius: Double) -> Double
+{
+    return 2 * Double.pi * Radius
+}
+
+//Invoke function calculate cirumference
+let circleCircumference  = circumferenceOfCircle(Radius: 2)
+
+//
 /*:
  [Previous: Writing Documentation](@previous) | Page 7
  */
