@@ -91,6 +91,17 @@ func volumeOfPyramid(Base: Double, Height: Double) -> Double {
 
 //Invoke function to calculate the volume of a pyramid
 let pyramidVolume = volumeOfPyramid(Base: 2, Height: 2)
+
+
+//Define function to calculate the volume of a sphere
+func volumeOfSphere(Radius: Double) -> Double {
+    return 4/3 * Double.pi * pow(Radius, 3.0)
+}
+
+//Invoke function to calculate sphere volume
+let sphereVolume = volumeOfSphere(Radius: 2)
+
+
 /*:
  [Previous: Writing Documentation](@previous) | Page 7
  */
