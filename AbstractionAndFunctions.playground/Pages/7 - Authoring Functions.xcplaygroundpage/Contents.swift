@@ -74,7 +74,13 @@ func surfaceAreaOfCone(Radius: Double, Side: Double) -> Double {
 //Invoke function to calculate surface area of cone
 let coneSurfaceArea = surfaceAreaOfCone(Radius: 1, Side: 1)
 
+//Define function to calculate the surface area of a sphere
+func surfaceAreaOfSphere(Radius: Double) -> Double {
+    return 4 * Double.pi * pow(Radius, 2.0)
+}
 
+//Invoke function to calculate surface area of sphere
+let sphereSurfaceArea = surfaceAreaOfSphere(Radius: 2)
 
 
 /*:
