@@ -61,7 +61,22 @@ func circumferenceOfCircle(Radius: Double) -> Double
 //Invoke function calculate cirumference
 let circleCircumference  = circumferenceOfCircle(Radius: 2)
 
-//
+//Define a function to calculate the surface area of a cone
+func surfaceAreaOfCone(Radius: Double, Side: Double) -> Double {
+    //Create constant for area of base
+    let areaOfBase = Double.pi * pow(Radius, 2.0)
+    //Create constant for area of lateral surface
+    let areaOfLateralSurface = Double.pi * Radius * Side
+    
+   return areaOfBase + areaOfLateralSurface
+}
+
+//Invoke function to calculate surface area of cone
+let coneSurfaceArea = surfaceAreaOfCone(Radius: 1, Side: 1)
+
+
+
+
 /*:
  [Previous: Writing Documentation](@previous) | Page 7
  */
