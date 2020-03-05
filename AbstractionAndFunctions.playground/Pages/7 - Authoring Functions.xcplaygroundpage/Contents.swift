@@ -87,10 +87,10 @@ areaOfTriangle(Base: 5.5, Height: 10)
 //Define a function to calculate the perimeter of a rectangle
 func perimeterOfRectangle(Length: Double, Width: Double) -> Double? {
     //Ensure we have reasonable values
-       guard Length > 0, Width > 0 else {
-           //We have one or more bad inputs so return a nil value
-           return nil
-       }
+    guard Length > 0, Width > 0 else {
+        //We have one or more bad inputs so return a nil value
+        return nil
+    }
     return 2 * Length + 2 * Width
 }
 
@@ -117,7 +117,7 @@ func circumferenceOfCircle(Radius: Double) -> Double?
         //We have one or more bad inputs so return a nil value
         return nil
     }
-
+    
     return 2 * Double.pi * Radius
 }
 
@@ -134,9 +134,9 @@ circumferenceOfCircle(Radius: 5.5)
 //Define a function to calculate the surface area of a cone
 func surfaceAreaOfCone(Radius: Double, Side: Double) -> Double? {
     //Ensure we have reasonable values
-       guard Radius > 0, Side > 0 else{
-           //We have one or more bad inputs so return a nil value
-           return nil
+    guard Radius > 0, Side > 0 else{
+        //We have one or more bad inputs so return a nil value
+        return nil
     }
     //Create constant for area of base
     let areaOfBase = Double.pi * pow(Radius, 2.0)
@@ -165,10 +165,10 @@ surfaceAreaOfCone(Radius: 5.5, Side: 10)
 //Define function to calculate the surface area of a sphere
 func surfaceAreaOfSphere(Radius: Double) -> Double? {
     //Ensure we have reasonable values
-         guard Radius > 0 else{
-             //We have one or more bad inputs so return a nil value
-             return nil
-      }
+    guard Radius > 0 else{
+        //We have one or more bad inputs so return a nil value
+        return nil
+    }
     return 4 * Double.pi * pow(Radius, 2.0)
 }
 
@@ -185,24 +185,50 @@ surfaceAreaOfSphere(Radius: 5.5)
 
 
 //Define function to calculate the volume of a square based pyramid
-func volumeOfPyramid(Base: Double, Height: Double) -> Double {
+func volumeOfPyramid(Base: Double, Height: Double) -> Double? {
+    //Ensure we have reasonable values
+    guard Base > 0, Height > 0 else{
+        //We have one or more bad inputs so return a nil value
+        return nil
+    }
     //Create constant for area of base
     let areaOfBase = pow(Base, 2.0)
     return 1/3 * areaOfBase * Height
 }
 
 //Invoke function to calculate the volume of a pyramid
-let pyramidVolume = volumeOfPyramid(Base: 2, Height: 2)
+// Test Case #1: Base: 5, Height: 10
+let pyramidVolume = volumeOfPyramid(Base: 5, Height: 10)
+
+// Test Case #2: Base: -5, Height: 10
+volumeOfPyramid(Base: -5, Height: 10)
+
+// Test Case #3: Base: 5, Height: -10
+volumeOfPyramid(Base: 5, Height: -10)
+
+// Test Case #4: Base: 5.5, Height: 10
+volumeOfPyramid(Base: 5.5, Height: 10)
 
 
 //Define function to calculate the volume of a sphere
-func volumeOfSphere(Radius: Double) -> Double {
+func volumeOfSphere(Radius: Double) -> Double? {
+    //Ensure we have reasonable values
+         guard Radius > 0 else{
+             //We have one or more bad inputs so return a nil value
+             return nil
+      }
     return 4/3 * Double.pi * pow(Radius, 3.0)
 }
 
 //Invoke function to calculate sphere volume
-let sphereVolume = volumeOfSphere(Radius: 2)
+// Test Case #1: Radius: 5
+let sphereVolume = volumeOfSphere(Radius: 5)
 
+// Test Case #2: Radius: -5
+volumeOfSphere(Radius: -5)
+
+// Test Case #3: Radius: 5.5
+volumeOfSphere(Radius: 5.5)
 
 /*:
  [Previous: Writing Documentation](@previous) | Page 7
