@@ -85,21 +85,51 @@ areaOfTriangle(Base: 5.5, Height: 10)
 
 
 //Define a function to calculate the perimeter of a rectangle
-func perimeterOfRectangle(Length: Double, Width: Double) -> Double {
+func perimeterOfRectangle(Length: Double, Width: Double) -> Double? {
+    //Ensure we have reasonable values
+       guard Length > 0, Width > 0 else {
+           //We have one or more bad inputs so return a nil value
+           return nil
+       }
     return 2 * Length + 2 * Width
 }
 
+
 //Invoke function to calculate rectangle perimeter
-let rectanglePerimeter = perimeterOfRectangle(Length: 1, Width: 1)
+// Test Case #1: Length:5, Width:10
+let rectanglePerimeter = perimeterOfRectangle(Length: 5, Width: 10)
+
+// Test Case #2: Length:-5, Width:10
+perimeterOfRectangle(Length: -5, Width: 10)
+
+// Test Case #3: Length: 5, Width:-10
+perimeterOfRectangle(Length: 5, Width: -10)
+
+// Test Case #4: Length: 5.5, Width:10
+perimeterOfRectangle(Length: 5.5, Width: 10)
+
+
 
 //Define a function to calculate the circumference of a circle
-func circumferenceOfCircle(Radius: Double) -> Double
-{
+func circumferenceOfCircle(Radius: Double) -> Double?
+{    //Ensure we have reasonable values
+    guard Radius > 0 else{
+        //We have one or more bad inputs so return a nil value
+        return nil
+    }
+
     return 2 * Double.pi * Radius
 }
 
 //Invoke function calculate cirumference
-let circleCircumference  = circumferenceOfCircle(Radius: 2)
+// Test Case #1: Radius:5
+let circleCircumference  = circumferenceOfCircle(Radius: 5)
+
+// Test Case #2: Radius -5
+circumferenceOfCircle(Radius: -5)
+
+// Test Case #2: Radius: 5.5
+circumferenceOfCircle(Radius: 5.5)
 
 //Define a function to calculate the surface area of a cone
 func surfaceAreaOfCone(Radius: Double, Side: Double) -> Double {
