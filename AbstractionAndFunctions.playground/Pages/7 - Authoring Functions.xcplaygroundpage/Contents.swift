@@ -132,7 +132,12 @@ circumferenceOfCircle(Radius: -5)
 circumferenceOfCircle(Radius: 5.5)
 
 //Define a function to calculate the surface area of a cone
-func surfaceAreaOfCone(Radius: Double, Side: Double) -> Double {
+func surfaceAreaOfCone(Radius: Double, Side: Double) -> Double? {
+    //Ensure we have reasonable values
+       guard Radius > 0, Side > 0 else{
+           //We have one or more bad inputs so return a nil value
+           return nil
+    }
     //Create constant for area of base
     let areaOfBase = Double.pi * pow(Radius, 2.0)
     //Create constant for area of lateral surface
@@ -141,16 +146,43 @@ func surfaceAreaOfCone(Radius: Double, Side: Double) -> Double {
     return areaOfBase + areaOfLateralSurface
 }
 
+
 //Invoke function to calculate surface area of cone
-let coneSurfaceArea = surfaceAreaOfCone(Radius: 1, Side: 1)
+// Test Case #1: Radius: 5, Side: 10
+let coneSurfaceArea = surfaceAreaOfCone(Radius: 5, Side: 10)
+
+// Test Case #2: Radius: -5, Side: 10
+surfaceAreaOfCone(Radius: -5, Side: 10)
+
+// Test Case #3: Radius: 5, Side: -10
+surfaceAreaOfCone(Radius: 5, Side: -10)
+
+// Test Case #4: Radius: 5.5, Side: 10
+surfaceAreaOfCone(Radius: 5.5, Side: 10)
+
+
 
 //Define function to calculate the surface area of a sphere
-func surfaceAreaOfSphere(Radius: Double) -> Double {
+func surfaceAreaOfSphere(Radius: Double) -> Double? {
+    //Ensure we have reasonable values
+         guard Radius > 0 else{
+             //We have one or more bad inputs so return a nil value
+             return nil
+      }
     return 4 * Double.pi * pow(Radius, 2.0)
 }
 
 //Invoke function to calculate surface area of sphere
-let sphereSurfaceArea = surfaceAreaOfSphere(Radius: 2)
+// Test Case #1: Radius: 5
+let sphereSurfaceArea = surfaceAreaOfSphere(Radius: 5)
+
+// Test Case #2: Radius: -5
+surfaceAreaOfSphere(Radius: -5)
+
+// Test Case #3: Radius: 5.5
+surfaceAreaOfSphere(Radius: 5.5)
+
+
 
 //Define function to calculate the volume of a square based pyramid
 func volumeOfPyramid(Base: Double, Height: Double) -> Double {
