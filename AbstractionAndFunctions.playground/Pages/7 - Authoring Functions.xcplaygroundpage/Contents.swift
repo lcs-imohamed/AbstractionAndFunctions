@@ -1,7 +1,7 @@
 import Foundation
 
 /*:
-# Authoring Functions
+ # Authoring Functions
  
  Refer to this [list of formulas for various geometric figures](https://www.eqao.com/en/assessments/grade-9-math/assessment-docs/g9-formula-sheet-academic.pdf) (from the Grade 9 EQAO Mathematics assessment).
  
@@ -16,7 +16,7 @@ import Foundation
  * at least three of your formulas must use 𝝿
  
  Then, on this page, author the:
-
+ 
  * function definitions
  * appropriate documentation (as described on [page 6](@previous))
  * make good choices for function names, argument labels, and parameter names
@@ -29,20 +29,60 @@ import Foundation
 
 
 //Define a function to calculate the area of a circle
-func areaOfCircle(Radius: Double) -> Double {
+func areaOfCircle(Radius: Double) -> Double? {
+    //Ensure we have reasonable values
+    guard Radius > 0 else{
+        //We have one or more bad inputs so return a nil value
+        return nil
+    }
+    //We have reasonable values so return the area
     return Double.pi * pow(Radius, 2.0)
 }
 
 //Invoke function to calculate area of circle
-let circleArea = areaOfCircle(Radius: 1)
+// Test Case #1: Radius: 10
+let circleArea = areaOfCircle(Radius: 10)
+
+// Test Case #2: Radius: -5
+areaOfCircle(Radius: -5)
+
+// Test Case #3: Radius: 5.5
+areaOfCircle(Radius: 5.5)
+
+// Test case #4: Radius -5.5
+areaOfCircle(Radius: -5.5)
+
+
+
+
 
 //Define a function to calculate the area of a triangle
-func areaOfTriangle(Base: Double, Height: Double) -> Double {
+func areaOfTriangle(Base: Double, Height: Double) -> Double? {
+    //Ensure we have reasonable values
+    guard Base > 0, Height > 0 else{
+        //We have one or more bad inputs so return a nil value
+        return nil
+    }
+    
+    //We have reasonable values so return the area
     return Base * Height / 2
 }
 
+
 //Invoke function calculate area
-let triangleArea = areaOfTriangle(Base: 1, Height: 2)
+// Test Case #1: Base: 5, Height: 10
+let triangleArea = areaOfTriangle(Base: 5, Height: 10)
+
+// Test Case #2: Base: -5, Height: 10
+areaOfTriangle(Base: -5, Height: 10)
+
+// Test Case #3: Base: 5, Height: -10
+areaOfTriangle(Base: -5, Height: 10)
+
+// Test Case #4: Base: 5.5, Height: 10
+areaOfTriangle(Base: 5.5, Height: 10)
+
+
 
 //Define a function to calculate the perimeter of a rectangle
 func perimeterOfRectangle(Length: Double, Width: Double) -> Double {
